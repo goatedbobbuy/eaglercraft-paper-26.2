@@ -1,0 +1,28 @@
+{
+  "mineSweeperEnabled": false,
+  "notificationMode": "radius",
+  "accessPermission": "",
+  "skipResetBypassLimit": 50,
+  "zeroBlockResetDelaySec": 0.0,
+  "skipResetEnabled": false,
+  "resetThresholdPercent": 0.0,
+  "mineLinerData": "walls:theColors:forced,bottom:beacon:forced,ladderType:normal",
+  "tpAccessByRank": false,
+  "world": "Virtually-Undefined",
+  "prisonBlocks": [
+    "cobblestone-5.0-0-0-0-0-0-false",
+    "andesite-95.0-0-0-0-0-0-false"
+  ],
+  "mineBlockEvents": [],
+  "mineAccessByRank": false,
+  "sortOrder": 0,
+  "mineType": "primary",
+  "name": "A",
+  "rank": "RANK,A,-1,&7[&2A&7]",
+  "skipResetPercent": 80.0,
+  "isVirtual": true,
+  "tag": "&7[&2A&7]",
+  "resetTime": 900,
+  "notificationRadius": 150,
+  "commands": []
+}

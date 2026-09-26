@@ -1,0 +1,15 @@
+id: legendary_key
+display-name: "<gold><bold>Legendary Key</bold></gold>"
+material: TRIPWIRE_HOOK
+lore:
+  - "<gray>Use this key to open the"
+  - "<gold>Legendary Crate</gold>"
+glow: true
+
+obtain-methods:
+  - type: VOTE
+  - type: COMMAND
+  - type: SHOP
+    shop-price: 10000
+    shop-currency: TOKENS
+    token-type: premium

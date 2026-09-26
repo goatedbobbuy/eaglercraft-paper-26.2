@@ -1,3 +1,3 @@
-# Eaglercraft-1.21.11-Server
-Eaglercraft 1.21.11 Server with TuffXPlus and all of the Via* plugins. Supports Minecraft 1.5.2-1.21.11.
+# Eaglercraft Server (Paper 26.2)
+Paper 26.2 backend with TuffXPlus and ViaVersion-family plugins. Client compatibility is provided by the Velocity and Eaglercraft proxy plugins.
 Forked to include paper.jar and limbo.jar

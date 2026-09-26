@@ -1,0 +1,15 @@
+id: common_key
+display-name: "<white><bold>Common Key</bold></white>"
+material: TRIPWIRE_HOOK
+lore:
+  - "<gray>Use this key to open the"
+  - "<white>Common Crate</white>"
+glow: true
+
+obtain-methods:
+  - type: MOB_DROP
+  - type: COMMAND
+  - type: SHOP
+    shop-price: 100
+    shop-currency: TOKENS
+    token-type: premium

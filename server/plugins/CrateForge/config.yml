@@ -1,0 +1,100 @@
+# ============================================================================
+# CrateForge — main configuration
+# ----------------------------------------------------------------------------
+# Premium crate plugin for Paper 1.21.x. Every option below is annotated.
+# Sample crates and keys are auto-generated under crates/ and keys/ on first
+# enable. Run /cf reload after editing any YAML to apply changes hot.
+# ============================================================================
+
+# ===== Language =============================================================
+# Active language. ISO-639-1 two-letter code (lowercase).
+# Bundled out of the box: es (Spanish), en (English).
+# Missing keys fall back to en automatically. Operators can drop extra
+# lang/<code>.yml files in plugins/CrateForge/lang/.
+language: en
+
+# ===== Storage ==============================================================
+# Persistence backend for placed crates, key history, token balances, and the
+# top-winners leaderboard.
+storage:
+  type: sqlite       # Only sqlite is supported in v1.x. Reserved for future MySQL backend.
+  file: crateforge.db   # File name (relative to plugins/CrateForge/) for the SQLite DB.
+
+# ===== Cooldown =============================================================
+# Per-player anti-spam cooldown between crate opens. Prevents double-clicks
+# from triggering two animations simultaneously.
+cooldown:
+  open-ms: 500       # Minimum milliseconds between two consecutive opens by the same player.
+
+# ===== Broadcast ============================================================
+# Server-wide announcement when a player wins a high-rarity prize. Uses the
+# `crate.broadcast-win` key from lang/{es,en}.yml as the format.
+broadcast:
+  enabled: true            # Toggle the broadcast feature globally.
+  min-rarity: RARE         # Only prizes at this rarity or above trigger a broadcast.
+                           # Allowed: COMMON | UNCOMMON | RARE | EPIC | LEGENDARY
+
+# ── Daily Bonus ──────────────────────────────────────────────────────────────
+# Players can claim one free key every `cooldown-hours` hours via /cf daily.
+daily-bonus:
+  enabled: true
+  key-id: "legendary_key"
+  cooldown-hours: 24
+
+# ===== Holograms ============================================================
+# Floating text displayed above placed physical crates (crate name + key hint).
+holograms:
+  enabled: true            # Show holograms above placed crates.
+  height: 1.6              # Blocks above the crate block the text floats at.
+  adapter: vanilla         # Backend: vanilla = Paper TextDisplay entities.
+                           #          decentholograms = use DecentHolograms (soft-dep).
+                           #          cmiholograms = use CMI Holograms module (soft-dep).
+
+# ===== Living crates ========================================================
+# A placed crate is not a dead block: an item floats and spins above it, wrapped
+# in a particle aura, so players spot a crate across the map. Every crate can
+# override the item, the particle and the colour in its own crates/<id>.yml.
+ambient:
+  enabled: true            # Master switch for the whole living-crate ambience.
+  period-ticks: 4          # Ticks between refreshes. Higher = cheaper, choppier aura.
+  view-distance: 24        # Blocks. Players farther away get no particles and no display.
+  max-rendered: 32         # Safety cap: crates animated per pass, nearest-first by iteration.
+
+  item:
+    enabled: true          # The floating, spinning item above the crate.
+    material: key          # `key` = the crate's own key item · a material name · `none`.
+    height: 1.15           # Blocks above the crate block.
+    scale: 0.7             # 1.0 is a full-size item; 0.7 reads well above a chest.
+    tilt-degrees: 22       # Keeps flat item sprites (most keys) from turning edge-on and vanishing.
+    spin-seconds: 5.0      # Seconds per full turn.
+    bob: 0.08              # Vertical float amplitude, in blocks. 0 = perfectly still.
+    glow: true             # Full-bright display, so it reads at night and indoors.
+
+  aura:
+    enabled: true          # The particle ring orbiting the floating item.
+    particle: DUST         # Any Bukkit particle name. DUST is the only one you can tint.
+    color: "#FFD54F"       # Dust colour. Give each crate its own in crates/<id>.yml.
+    radius: 0.55           # Ring radius, in blocks.
+    height: 1.05           # Ring height above the crate block.
+    points: 3              # Particles emitted per refresh.
+    particleforge-effect: ""   # Optional ParticleForge effect id, replaces the ring above.
+                               # Example: crate/legendary-win. Empty = built-in ring.
+
+# ===== Visual hooks =========================================================
+# Optional cosmetic integrations. Each is opt-in even when the plugin is
+# present, so you can disable a hook without removing the dependency.
+visual-hooks:
+  items-adder: false       # Resolve `itemsadder:namespace:id` references in prize materials.
+  oraxen: false            # Resolve `oraxen:itemId` references in prize materials.
+  model-engine: false      # Use ModelEngine for animated crate displays (advanced).
+
+# ===== Economy ==============================================================
+# Vault hook for MONEY-type rewards. If disabled or Vault is missing, MONEY
+# rewards in crate definitions are silently skipped.
+economy:
+  enabled: true            # Master switch for Vault-backed money rewards. Requires Vault.
+
+# ===== Telemetry ============================================================
+# Anonymous usage stats via bStats. Players themselves can opt out globally
+# via plugins/bStats/config.yml — this id is only the project identifier.
+bstats-id: 24002

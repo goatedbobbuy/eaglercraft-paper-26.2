@@ -1,0 +1,32 @@
+{
+  "mineSweeperEnabled": false,
+  "notificationMode": "radius",
+  "accessPermission": "",
+  "skipResetBypassLimit": 50,
+  "zeroBlockResetDelaySec": 0.0,
+  "skipResetEnabled": false,
+  "resetThresholdPercent": 0.0,
+  "mineLinerData": "walls:glowstone:forced,bottom:seaEchos:forced,ladderType:normal",
+  "tpAccessByRank": false,
+  "world": "Virtually-Undefined",
+  "prisonBlocks": [
+    "stone-5.0-0-0-0-0-0-false",
+    "granite-10.0-0-0-0-0-0-false",
+    "coal_ore-20.0-0-0-0-0-0-false",
+    "diorite-20.0-0-0-0-0-0-false",
+    "cobblestone-20.0-0-0-0-0-0-false",
+    "andesite-25.0-0-0-0-0-0-false"
+  ],
+  "mineBlockEvents": [],
+  "mineAccessByRank": false,
+  "sortOrder": 0,
+  "mineType": "primary",
+  "name": "E",
+  "rank": "RANK,E,-1,&7[&6E&7]",
+  "skipResetPercent": 80.0,
+  "isVirtual": true,
+  "tag": "&7[&6E&7]",
+  "resetTime": 900,
+  "notificationRadius": 150,
+  "commands": []
+}

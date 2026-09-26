@@ -1,0 +1,86 @@
+{
+  "ranks": [
+    {
+      "rankName": "A"
+    },
+    {
+      "rankName": "B"
+    },
+    {
+      "rankName": "C"
+    },
+    {
+      "rankName": "D"
+    },
+    {
+      "rankName": "E"
+    },
+    {
+      "rankName": "F"
+    },
+    {
+      "rankName": "G"
+    },
+    {
+      "rankName": "H"
+    },
+    {
+      "rankName": "I"
+    },
+    {
+      "rankName": "J"
+    },
+    {
+      "rankName": "K"
+    },
+    {
+      "rankName": "L"
+    },
+    {
+      "rankName": "M"
+    },
+    {
+      "rankName": "N"
+    },
+    {
+      "rankName": "O"
+    },
+    {
+      "rankName": "P"
+    },
+    {
+      "rankName": "Q"
+    },
+    {
+      "rankName": "R"
+    },
+    {
+      "rankName": "S"
+    },
+    {
+      "rankName": "T"
+    },
+    {
+      "rankName": "U"
+    },
+    {
+      "rankName": "V"
+    },
+    {
+      "rankName": "W"
+    },
+    {
+      "rankName": "X"
+    },
+    {
+      "rankName": "Y"
+    },
+    {
+      "rankName": "Z"
+    }
+  ],
+  "rankCostMultiplierPerRank": 0.0,
+  "name": "default",
+  "applyRankCostMultiplierToLadder": true,
+  "commands": []
+}

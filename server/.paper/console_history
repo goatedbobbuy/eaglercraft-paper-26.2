@@ -1,0 +1,36 @@
+1790445750411:stop
+1790446016778:restart
+1790446217596:ranks autoconfigure
+1790446290104:mv create Prison normal --no-structures --world-type flat
+1790446322398:/rg flag -w Prison __global__ passthrough deny
+1790446365717:region flag -w Prison __global__ mob-spawning deny
+1790447539845:stop
+1790455280541:]1[8;3Rrestart
+1790455285967:restart
+1790455478594:stop
+1790455645851:?
+1790455655880:? 1
+1790455660722:h
+1790455662176:?
+1790456378109:stop
+1790457724700:oneblock reload
+1790457741531:pl
+1790457749741:pex
+1790457802108:mv create Oneblock normal --generator VoidWorldGenerator
+1790457875309:restart
+1790458055842:mv create Oneblock normal --generator VoidWorldGenerator --no-structures
+1790458217091:worldguard reload
+1790458219630:mv create Oneblock normal --generator VoidWorldGenerator --no-structures
+1790458265782:stop
+1790459060320:m
+1790459324741:mv
+1790459327573:mv help
+1790459337531:mv help 2
+1790459347569:mv help 3
+1790459376294:mv reload
+1790459399534:mv worlds
+1790459402426:mv help
+1790459752307:stop
+1790459972817:ping
+1790459995013:restart
+1790460314240:stop

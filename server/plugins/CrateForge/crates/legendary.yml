@@ -1,0 +1,68 @@
+id: legendary
+display-name: "<gradient:gold:yellow>Legendary Crate</gradient>"
+key-id: legendary_key
+animation: CSGO
+hologram-lines:
+  - "<gold><bold>LEGENDARY CRATE"
+  - "<yellow>Right-click to open"
+
+# Living-crate ambience. Anything omitted here is inherited from config.yml.
+ambient:
+  enabled: true
+  item: key            # `key` = this crate's key item · a material name · `none`
+  particle: DUST
+  color: "#FFD54F"
+
+prizes:
+  - id: godly_sword
+    display-name: "<gold>Godly Sword"
+    material: NETHERITE_SWORD
+    amount: 1
+    weight: 5
+    rarity: LEGENDARY
+    enchantments:
+      SHARPNESS: 5
+      UNBREAKING: 3
+      LOOTING: 3
+    rewards:
+      - type: ITEM
+      - type: COMMAND
+        command: "say {player} won a Godly Sword!"
+        run-as-console: true
+
+  - id: money_5000
+    display-name: "<green>$5,000"
+    material: SUNFLOWER
+    amount: 1
+    weight: 20
+    rarity: RARE
+    rewards:
+      - type: MONEY
+        amount: 5000.0
+
+  - id: legendary_keys_2
+    display-name: "<gold>2 Legendary Keys"
+    material: TRIPWIRE_HOOK
+    amount: 1
+    weight: 8
+    rarity: LEGENDARY
+    rewards:
+      - type: COMMAND
+        command: "cf givekey {player} legendary_key 2"
+        run-as-console: true
+
+  - id: tokens_250
+    display-name: "<yellow>250 Premium Tokens"
+    material: GOLD_NUGGET
+    amount: 1
+    weight: 45
+    rarity: RARE
+    rewards:
+      - type: TOKEN
+        token-type: premium
+        amount: 250
+
+pity:
+  enabled: true
+  threshold: 15
+  guaranteed-min-rarity: RARE

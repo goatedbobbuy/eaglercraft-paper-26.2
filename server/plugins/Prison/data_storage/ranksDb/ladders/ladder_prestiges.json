@@ -1,0 +1,83 @@
+{
+  "ranks": [
+    {
+      "rankName": "P1"
+    },
+    {
+      "rankName": "P2"
+    },
+    {
+      "rankName": "P3"
+    },
+    {
+      "rankName": "P4"
+    },
+    {
+      "rankName": "P5"
+    },
+    {
+      "rankName": "P6"
+    },
+    {
+      "rankName": "P7"
+    },
+    {
+      "rankName": "P8"
+    },
+    {
+      "rankName": "P9"
+    },
+    {
+      "rankName": "P10"
+    },
+    {
+      "rankName": "P11"
+    },
+    {
+      "rankName": "P12"
+    },
+    {
+      "rankName": "P13"
+    },
+    {
+      "rankName": "P14"
+    },
+    {
+      "rankName": "P15"
+    },
+    {
+      "rankName": "P16"
+    },
+    {
+      "rankName": "P17"
+    },
+    {
+      "rankName": "P18"
+    },
+    {
+      "rankName": "P19"
+    },
+    {
+      "rankName": "P20"
+    },
+    {
+      "rankName": "P21"
+    },
+    {
+      "rankName": "P22"
+    },
+    {
+      "rankName": "P23"
+    },
+    {
+      "rankName": "P24"
+    },
+    {
+      "rankName": "P25"
+    }
+  ],
+  "rankCostMultiplierPerRank": 0.1,
+  "name": "prestiges",
+  "applyRankCostMultiplierToLadder": true,
+  "commands": []
+}

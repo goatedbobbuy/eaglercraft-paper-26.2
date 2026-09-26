@@ -16,11 +16,11 @@ enable_custom_pause_menu = false
 	button_mode_open_new_tab = false
 	# Sets the URL for the "Server Info" button to use if it should open a URL in a
 	# new tab or the webview instead of directly downloading the markup to display
-	# from the EaglerXBungee server itself over the WebSocket.
+	# from EaglerXServer itself over the WebSocket.
 	server_info_embed_url = ""
 	# Determines if the "Server Info" button should download the webview markup
-	# directly from the EaglerXBungee server over WebSocket instead of loading an
-	# external URL. Cannot be used with button_mode_open_new_tab!
+	# directly from EaglerXServer over WebSocket instead of loading an external URL.
+	# Cannot be used with button_mode_open_new_tab!
 	button_mode_embed_file = true
 	# Sets the name of the local file/template containing the markup to display in the
 	# "Server Info" webview if it is not in URL mode, relative to this config file.
@@ -58,6 +58,7 @@ enable_custom_pause_menu = false
 
 	[server_info_button.server_info_embed_template_globals]
 		example_global = "eagler"
+
 # Section, can be used to turn the "Invite" (formerly "Open to LAN") button on the
 # pause menu into a "Discord" button that players can click to join your discord
 # server
@@ -68,6 +69,7 @@ enable_custom_pause_menu = false
 	button_text = "Discord"
 	# Defines the URL to open when the button is pressed
 	button_url = "https://invite url here"
+
 # Section, map of custom images to display on the pause menu, paths are relative
 # to this config file.
 [custom_images]

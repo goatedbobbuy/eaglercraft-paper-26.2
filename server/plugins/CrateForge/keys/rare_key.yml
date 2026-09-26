@@ -1,0 +1,15 @@
+id: rare_key
+display-name: "<aqua><bold>Rare Key</bold></aqua>"
+material: TRIPWIRE_HOOK
+lore:
+  - "<gray>Use this key to open the"
+  - "<aqua>Rare Crate</aqua>"
+glow: true
+
+obtain-methods:
+  - type: VOTE
+  - type: COMMAND
+  - type: SHOP
+    shop-price: 1500
+    shop-currency: TOKENS
+    token-type: premium

@@ -1,0 +1,65 @@
+id: common
+display-name: "<gradient:gray:white>Common Crate</gradient>"
+key-id: common_key
+animation: CSGO
+hologram-lines:
+  - "<white><bold>COMMON CRATE"
+  - "<gray>Right-click to open"
+
+# Living-crate ambience. Anything omitted here is inherited from config.yml.
+ambient:
+  enabled: true
+  item: key            # `key` = this crate's key item · a material name · `none`
+  particle: DUST
+  color: "#D9E2EC"
+
+prizes:
+  - id: iron_gear
+    display-name: "<gray>Iron Gear"
+    material: IRON_SWORD
+    amount: 1
+    weight: 40
+    rarity: COMMON
+    enchantments:
+      SHARPNESS: 2
+      UNBREAKING: 1
+    rewards:
+      - type: ITEM
+
+  - id: tokens_10
+    display-name: "<yellow>10 Premium Tokens"
+    material: GOLD_NUGGET
+    amount: 1
+    weight: 25
+    rarity: UNCOMMON
+    rewards:
+      - type: TOKEN
+        token-type: premium
+        amount: 10
+
+  - id: common_keys_2
+    display-name: "<white>2 Common Keys"
+    material: TRIPWIRE_HOOK
+    amount: 1
+    weight: 8
+    rarity: RARE
+    rewards:
+      - type: COMMAND
+        command: "cf givekey {player} common_key 2"
+        run-as-console: true
+
+  - id: uncommon_key
+    display-name: "<green>Uncommon Key"
+    material: TRIPWIRE_HOOK
+    amount: 1
+    weight: 2
+    rarity: EPIC
+    rewards:
+      - type: COMMAND
+        command: "cf givekey {player} uncommon_key 1"
+        run-as-console: true
+
+pity:
+  enabled: true
+  threshold: 30
+  guaranteed-min-rarity: RARE

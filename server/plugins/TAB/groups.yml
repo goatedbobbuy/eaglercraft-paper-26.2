@@ -1,0 +1,29 @@
+owner:
+  tabprefix: "&4&l[Owner] &f"
+  tagprefix: "&4[Owner] &f"
+admin:
+  tabprefix: "&c&l[Admin] &f"
+  tagprefix: "&c[Admin] &f"
+mod:
+  tabprefix: "&2&l[Mod] &f"
+  tagprefix: "&2[Mod] &f"
+helper:
+  tabprefix: "&b&l[Helper] &f"
+  tagprefix: "&b[Helper] &f"
+builder:
+  tabprefix: "&e&l[Builder] &f"
+  tagprefix: "&e[Builder] &f"
+vip:
+  tabprefix: "&a&l[VIP] &f"
+  tagprefix: "&a[VIP] &f"
+default:
+  tabprefix: "&7[Player] &f"
+  tagprefix: "&7[Player] &f"
+
+# Fallback settings for players without a mapped group.
+_DEFAULT_:
+  tabprefix: "&7"
+  tagprefix: "&7"
+  customtabname: "%player%"
+  tabsuffix: ""
+  tagsuffix: ""

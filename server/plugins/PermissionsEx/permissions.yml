@@ -1,0 +1,111 @@
+groups:
+  default:
+    options:
+      default: true
+      prefix: '&7'
+    permissions:
+      - modifyworld.*
+      - essentials.help
+      - essentials.rules
+      - essentials.motd
+      - essentials.list
+      - essentials.spawn
+      - essentials.home
+      - essentials.sethome
+      - essentials.delhome
+      - essentials.warp
+      - essentials.warp.list
+      - essentials.balance
+      - essentials.balancetop
+      - essentials.pay
+      - essentials.msg
+      - essentials.reply
+      - essentials.mail
+      - essentials.mail.send
+      - essentials.ignore
+      - essentials.afk
+      - essentials.ping
+      - essentials.tpa
+      - essentials.tpaccept
+      - essentials.tpdeny
+      - mcmmo.skills.*
+      - EconomyShopGUI.shop
+      - EconomyShopGUI.sellall
+      - EconomyShopGUI.sellallitem
+      - EconomyShopGUI.sellallhand
+      - EconomyShopGUI.sellgui
+      - crazyenchantments.player.*
+  vip:
+    inheritance:
+      - default
+    options:
+      prefix: '&a[VIP] '
+    permissions:
+      - essentials.back
+      - essentials.workbench
+      - essentials.enderchest
+      - essentials.feed
+  helper:
+    inheritance:
+      - vip
+    options:
+      prefix: '&b[Helper] '
+    permissions:
+      - tab.staff
+      - essentials.mute
+      - essentials.kick
+      - essentials.kick.notify
+      - essentials.socialspy
+  builder:
+    inheritance:
+      - default
+    options:
+      prefix: '&e[Builder] '
+    permissions:
+      - fawe.permpack.basic
+      - worldedit.wand
+      - worldedit.selection.pos
+      - worldedit.selection.chunk
+      - worldedit.selection.expand
+      - worldedit.selection.contract
+      - worldedit.region.set
+      - worldedit.region.replace
+      - worldedit.region.walls
+      - worldedit.region.faces
+  mod:
+    inheritance:
+      - helper
+    options:
+      prefix: '&2[Mod] '
+    permissions:
+      - essentials.ban
+      - essentials.ban.notify
+      - essentials.tempban
+      - essentials.unban
+      - essentials.warn
+      - tab.seevanished
+  admin:
+    inheritance:
+      - mod
+      - builder
+    options:
+      prefix: '&c[Admin] '
+    permissions:
+      - essentials.*
+      - crazyenchantments.admin.*
+      - EconomyShopGUI.*
+      - fawe.admin
+      - worldedit.*
+      - worldguard.*
+      - multiverse.*
+      - itemedit.admin
+      - tab.admin
+      - placeholderapi.admin
+  owner:
+    inheritance:
+      - admin
+    options:
+      prefix: '&4[Owner] '
+    permissions:
+      - '*'
+schema-version: 1

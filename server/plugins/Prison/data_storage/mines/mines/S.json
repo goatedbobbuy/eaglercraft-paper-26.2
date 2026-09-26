@@ -1,0 +1,32 @@
+{
+  "mineSweeperEnabled": false,
+  "notificationMode": "radius",
+  "accessPermission": "",
+  "skipResetBypassLimit": 50,
+  "zeroBlockResetDelaySec": 0.0,
+  "skipResetEnabled": false,
+  "resetThresholdPercent": 0.0,
+  "mineLinerData": "walls:theColors:forced,bottom:glowingPlanks:forced,ladderType:normal",
+  "tpAccessByRank": false,
+  "world": "Virtually-Undefined",
+  "prisonBlocks": [
+    "gold_block-5.0-0-0-0-0-0-false",
+    "emerald_ore-10.0-0-0-0-0-0-false",
+    "quartz_block-20.0-0-0-0-0-0-false",
+    "diamond_ore-20.0-0-0-0-0-0-false",
+    "redstone_ore-20.0-0-0-0-0-0-false",
+    "iron_block-25.0-0-0-0-0-0-false"
+  ],
+  "mineBlockEvents": [],
+  "mineAccessByRank": false,
+  "sortOrder": 0,
+  "mineType": "primary",
+  "name": "S",
+  "rank": "RANK,S,-1,&7[&5S&7]",
+  "skipResetPercent": 80.0,
+  "isVirtual": true,
+  "tag": "&7[&5S&7]",
+  "resetTime": 900,
+  "notificationRadius": 150,
+  "commands": []
+}

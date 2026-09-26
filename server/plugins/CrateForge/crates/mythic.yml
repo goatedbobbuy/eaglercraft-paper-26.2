@@ -1,0 +1,65 @@
+id: mythic
+display-name: "<gradient:light_purple:dark_purple>Mythic Crate</gradient>"
+key-id: mythic_key
+animation: CSGO
+hologram-lines:
+  - "<light_purple><bold>MYTHIC CRATE"
+  - "<yellow>Right-click to open"
+
+# Living-crate ambience. Anything omitted here is inherited from config.yml.
+ambient:
+  enabled: true
+  item: key            # `key` = this crate's key item · a material name · `none`
+  particle: DUST
+  color: "#BD73E8"
+
+prizes:
+  - id: netherite_chestplate
+    display-name: "<light_purple>Mythic Netherite Chestplate"
+    material: NETHERITE_CHESTPLATE
+    amount: 1
+    weight: 30
+    rarity: EPIC
+    enchantments:
+      PROTECTION: 4
+      UNBREAKING: 3
+      THORNS: 2
+    rewards:
+      - type: ITEM
+
+  - id: money_2000
+    display-name: "<green>$2,000"
+    material: SUNFLOWER
+    amount: 1
+    weight: 20
+    rarity: EPIC
+    rewards:
+      - type: MONEY
+        amount: 2000.0
+
+  - id: mythic_keys_2
+    display-name: "<light_purple>2 Mythic Keys"
+    material: TRIPWIRE_HOOK
+    amount: 1
+    weight: 8
+    rarity: LEGENDARY
+    rewards:
+      - type: COMMAND
+        command: "cf givekey {player} mythic_key 2"
+        run-as-console: true
+
+  - id: legendary_key
+    display-name: "<gold>Legendary Key"
+    material: TRIPWIRE_HOOK
+    amount: 1
+    weight: 2
+    rarity: LEGENDARY
+    rewards:
+      - type: COMMAND
+        command: "cf givekey {player} legendary_key 1"
+        run-as-console: true
+
+pity:
+  enabled: true
+  threshold: 20
+  guaranteed-min-rarity: LEGENDARY

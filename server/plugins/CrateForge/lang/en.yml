@@ -1,0 +1,75 @@
+# CrateForge — english
+# All strings are MiniMessage. The chat prefix is prepended by the SDK
+# automatically — no <prefix> needed here.
+# Placeholders inside braces ({player}, {crate}, {key}, …) are substituted
+# by the plugin at send time.
+
+# ===== Generic errors =======================================================
+generic:
+  no-permission: "<red>You don't have permission to do that."
+  player-only: "<red>This command can only be used by players."
+  unknown-crate: "<red>Unknown crate: <white>{crate}</white>."
+  unknown-key: "<red>Unknown key: <white>{key}</white>."
+  player-not-found: "<red>Player not found: <white>{player}</white>."
+
+# ===== Crate opening ========================================================
+crate:
+  no-key: "<red>You need a <white>{key}</white> to open this crate."
+  already-opening: "<red>You are already opening a crate."
+  # {crate} ya es el NOMBRE de la crate ("Legendary Crate"), no su id: no se le añade
+  # la palabra "crate" detrás o sale "the Legendary Crate crate".
+  opened: "<green>You opened <white>{crate}</white> and won <white>{prize}</white>!"
+  broadcast-win: "<gold>{player} <yellow>won <white>{prize}</white> <yellow>from <white>{crate}</white>!"
+  pity-triggered: "<aqua>Pity activated — guaranteed prize this time!"
+
+# ===== Keys =================================================================
+key:
+  given: "<green>Given <white>{amount}x {key}</white> to <white>{player}</white>."
+  received: "<green>You received <white>{amount}x {key}</white>."
+
+# ===== Tokens ===============================================================
+token:
+  given: "<green>Given <white>{amount} {type}</white> tokens to <white>{player}</white>."
+  balance: "<yellow>You have <white>{amount} {type}</white> tokens."
+  spent: "<yellow>Spent <white>{amount} {type}</white> tokens."
+  not-enough: "<red>Not enough tokens. You need <white>{required}</white> but have <white>{current}</white>."
+
+# ===== Physical crate placement =============================================
+placement:
+  crate-placed: "<green>Physical crate <white>{crate}</white> placed at <white>{location}</white>."
+  crate-removed: "<green>Physical crate removed at <white>{location}</white>."
+  no-crate-here: "<red>No physical crate at that location."
+  select-block: "<yellow>Right-click a block to place the crate <white>{crate}</white>."
+
+# ===== Admin ================================================================
+admin:
+  reload-success: "<green>CrateForge reloaded successfully."
+  reload-failed: "<red>Reload failed — check console for errors."
+
+# ===== History ==============================================================
+history:
+  header: "<gold>--- Crate History for {player} ---"
+  entry: "<gray>{date} <white>{crate}</white> → <yellow>{prize}</yellow>"
+  empty: "<yellow>No history found."
+
+# ===== Top winners ==========================================================
+top:
+  header: "<gold>--- Top Crate Winners ---"
+  entry: "<gray>{rank}. <white>{player}</white> — {count} opens"
+
+# ===== Daily bonus ==========================================================
+daily:
+  claimed: "<green>✔ Daily bonus claimed! You received a <gold>{key}</gold> key."
+  already-claimed: "<red>✘ Daily bonus on cooldown. Try again in <gold>{time}</gold>."
+  disabled: "<red>Daily bonus is not enabled on this server."
+  not-player: "<red>Only players can claim the daily bonus."
+
+# ===== GUI ==================================================================
+gui:
+  preview:
+    rarity: "<gray>Rarity: <yellow>{rarity}"
+    weight: "<gray>Weight: <white>{weight}"
+    chance: "<gray>Chance: <white>{chance}%"
+    prizes: "<gray>Prizes: <white>{count}"
+    pity: "<gray>Pity: <white>{current}/{threshold}"
+    pity-off: "<gray>Pity: <dark_gray>disabled"

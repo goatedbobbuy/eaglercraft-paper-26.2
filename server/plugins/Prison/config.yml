@@ -1,0 +1,683 @@
+# == == == == == == ==== == == == == == #
+#      Prison 3.2.x Configuration       #
+#   Be sure to check your formatting!   #
+#        This must be valid yml.        #
+# == == == == == == ==== == == == == == #
+#
+#  New features have been recently added to prison.  These new features 
+#  can add a lot of value to your server, but they may also be in the 
+#  process of growing and evolving. If you experiance any issues, have
+#  questions, or you have ideas on how to improve upon these items, 
+#  then please visit our discord server.  These new features are 
+#  marked with the "NEW" tag below.
+#
+#
+
+
+
+# Enables Prison's debug mode as soon as prison starts.
+# Do not enable unless instructed to do so, since it will increase the amount of
+# information sent to the console.  To turn on/off debug mode, the following
+# command will toggle it on and off:
+#  /prison debug  
+debug: false
+
+
+
+# Prison support: 
+#   Prison has a lot of built in tools to help us provide you with a higher degree of
+#   support, and to help make it easier for you.
+#   One of these features, is the ability to submit details about your server's
+#   Prison setup so we can review many of the features and settings without having
+#   to ask tons of questions. It also helps to improve the quality of our help by
+#   eliminating miscommunication and trying to provide answers off of incorrect 
+#   settings. 
+#   Prison is able to gather various informmation and send it in one or more documents
+#   and then provide you with one URL to copy and paste to share with us.
+#   
+#   submit-service:
+#     PRIVATEBIN-NET - New default option - This uses an encrypted payload and no one
+#                      can read the posts without the password. All posts are eligable
+#                      to be purged in 1 week.
+#           URL:       privatebin.net - hosted in sweeden
+#           Options: 
+#				expire: [one_week, one_day, one_hour]
+#               password: PrisonSupport - default - Do not change this unless you tell
+#                      support team what it is. Odds of someone reading your post is 
+#                      limited to only those who may be on our support discord server.
+#     PASTE-HELPCHAT - This was the default serivce.  We no longer recommend using this
+#                      service because: the posts do not expire and are not deletable,
+#                      anyone with the URL can view the contents (improbable the can 
+#                      find it due to random URL), and limited to 400k.
+#           URL:       paste.helpch.at - Ran by the folks who publish placeholderAPI.
+#           Options:   none\
+#
+prison-support:
+  submit-service: PRIVATEBIN-NET
+  expire: 1week
+  password: PrisonSupport
+
+
+
+# Upon server startup prison will check to see if a newer version has been released.
+check-updates: true
+
+# Provides unidentifiable metrics so we can better understand what versions
+# of minecraft, spigot, server OS, and the Prison plugin version that is 
+# being used. This is used to understand what versions of spigot should be
+# supported, and which versions of prison is actually being used and can
+# greatly impact future development efforts. Enabling the 
+# send-metrics would be greatly appreciatd since it will help us greatly.
+# You can view the stats here: https://bstats.org/plugin/bukkit/Prison
+send-metrics: true
+
+
+# This will show prison based alerts, such as new versions of the plugin are available.
+# If an alert is being shown, it can be disabled online by acknowledging it.
+show-alerts: true
+
+
+# # Prestige related configuration settings:
+#
+# Options to reset the money, and/or reset the default ladder.
+# Confirmation requires action from the player. If GUI is disabled, then it will use 
+# the command based confiration.  If confirm-enabled is false, then no confirmation
+# will be used.
+# The value for prestige.no-prestige-value is use when a player has no prestige rank with
+# the base placeholders: prison_rank, prison_rank_laddername, prison_rank_tag, and
+# prison_rank_tag_laddername. If not defined, an empty String is used.
+#
+# If 'enable__ranks_rankup_prestiges__permission' is enabled, then the players
+# must have perm `ranks.rankup.prestiges` enabled.  If this setting is false, then
+# all players will be able to use the prestiges command without any special
+# perm.
+prestige:
+  enabled: true
+  resetMoney: true
+  resetDefaultLadder: true
+  confirmation-enabled: true
+  prestige-confirm-gui: true
+  force-sellall: false
+  no-prestige-value: ""
+  prestige-bypass-perm-check: true
+  enable__ranks_rankup_prestiges__permission: false
+
+
+#
+# These are various ranks settings:
+#
+# The setting `add-new-players-on-startup` will allow prison to scan for new players that
+# have not been setup in prison, and add them at server startup.
+# This can be disabled. If it is, then when new players are "accessed" then they should be
+# added to prison upon demand.  It's been reported that adding new players can take a few
+# seconds (2 to 5 seconds) per player, which has not been confirmed.  But if true, then
+# existing servers switching over to Prison could take a long time to setup all players
+# at startup. So then disabling this setting may make sense in those conditions.
+# NOTE: Its not possible to test all situations where new players are bypassed when starting
+#       Prison. Therefore disabling this setting is at your own risk. But if any issues are
+#       encountered, then PLEASE contact support on our discord server ASAP and we will 
+#       fix the issues for you. We want Prison to be bug free, but are not able to ensure
+#       all functions able to handle new players that have not been added to Prison due to
+#       the degree of complexity of some sections of prison.
+#
+# The 'player-economy-cache-update-delay-ticks' provides the nummber of ticks of a delay
+# from when a player is paid money, until the prison updates the econommy.  The default
+# delay is 3 seconds, or 60 tickks. The purpose of this delayed update is to prevent the
+# frequent player payments while speed-mining fromm overwhelming the economy plugin. 
+# For example, if there are 20 players online, all mining with a highly efficent pickaxe,
+# and with autosell enabled, a single player would recieve payments for each block broken, 
+# of which could quickly exceed 20 to 40 updates per second per player. So with 20 players
+# mining concurrently, the econommy plugin would have to be able to handle 400, to 800 
+# updates per second, if not more.  Some economy plugins cannot handle such loads, and
+# can cause the server to lag becaus they are not using asynchronous updates to the storage
+# of choice, and they mmay not cache the updates to prevent so many updates.
+# If the 3 second delay is too long, and you're wanting something a little quicker, try
+# reducing the number of ticks to like 30, 20, or 10.  Becareful of going too low.  If 
+# you notice potential server delays, trying increasing the delays. You can use
+# `/timings` to confirm where the lag is occuring.
+
+ranks:
+  startup:
+    add-new-players-on-startup: false
+  gui-default-include-rankup-button: true
+  gui-prestiges-include-rankup-button: true
+  gui-others-include-rankup-button: true
+  player-economy-cache-update-delay-ticks: 60
+  rankup-bypass-perm-check: true
+  
+
+
+#
+# The setting `add-new-players-on-startup` will allow prison to scan for new players that
+# have not been setup in prison, and add them at server startup.
+# This can be disabled. If it is, then when new players are "accessed" then they should be
+# added to prison upon demand.  It's been reported that adding new players can take a few
+# seconds (2 to 5 seconds) per player, which has not been confirmed.  But if true, then
+# existing servers switching over to Prison could take a long time to setup all players
+# at startup. So this setting may make sense in those conditions.
+# NOTE: Its not possible to test all situations where new players are bypassed when starting
+#       Prison. Therefore disabling this setting is at your own risk. But if any issues are
+#       encountered, then PLEASE contact support on our discord server ASAP and we will 
+#       fix the issues for you. We want Prison to be bug free, but are not able to ensure
+#       all functions able to handle new players that have not been added to Prison due to
+#       the degree of complexity of some sections of prison.
+#
+# Older player files, under 'plugins/Prison/data_storage/ranksDB/players', were based upon 
+# the player's UUID, which is difficult to figure out which file is for each player.'
+# The setting 'use-friendly-user-file-names: true' will enable a new file name format, which
+# is similar to the file names used under the playerCache directory.
+# This setting is disabled by default.  The idea is that this new feature will be rolled out, 
+# but will not be enabled yet. When this is enabled for everyone, this setting will go away.
+# When this feature is enabled, the old file formats will be replaced with the new format
+# automatically. Once converted, the files cannot be reverted back to the old names.
+prison-ranks:
+  startup:
+    add-new-players-on-startup: false
+  use-friendly-user-file-names: false
+
+
+
+# WARNING: Never use the following setting to disable the vault-economy
+#   integration unless directed by Prison support to do so.
+# WARNING: Prison will not allow the Ranks module to be enabled if a valid
+#   economy cannot be found and enabled succesfully.  Use of this setting 
+#   may prevent prison from finding a workable economy to use.
+# This setting, integrations.prevent-economy-vault-usage, will prevent
+# the use of vault for any economy transactions. Prison primarily uses vault, 
+# so enabling this setting could be dangerous. 
+# Where it can be useful, is if prison cannot communicate through vault, 
+# but is able to successfully communicate directly with the 
+# EssentialsEconomy, SaneEconomy, TheNewEconomy, or GemsEconomy.  Enabling this setting
+# will NOT work for any other plugins.
+# To test vault, run the following commands when vault economy has been
+# succesfully loaded.  Run these command in the console:
+#   /balance <player>
+#   /ranks player <player>
+# Compare the total balance for the specified player from both commands.
+# They should match. If not, then there is an issue with vault.
+# Please contact the Prison support team through our discord server.
+integrations:
+  prevent-economy-vault-usage: false
+
+
+
+# This enables new physics to be applied when jumpping on slime blocks.
+# When holding different items, like some block types or picks, the player can
+# jump even higher to heights of 40 to 60+ blocks.
+# Boosters are items held in the primary hand of the player, which boosts the 
+# jump with each bounce.
+slime-fun:
+  enabled: false
+  display-messages: true
+  boosters:
+    diamond_pickkaxe: 3.0
+    gold_pickaxe: 2.85
+    iron_pickaxe: 2.85
+    stone_pickaxe: 2.85
+    wood_pickaxe: 2.85
+    diamond_block: 1.65
+    gold_block: 1.45
+    iron_block: 1.20
+
+
+
+# Prison now has GUIs for most features and actions. For more options
+# please check the GuiConfig.yml. 
+# Access with /gui
+prison-gui-enabled: true
+
+# There're more options for the GUIs, please edit the GuiConfig.yml
+
+
+# NEW: Enable or disable the SellAll command and sub-commands
+# New feature so setting to false since it will override other shop plugins.
+#sellall: true
+# Note: The settings for sellall module has been moved to the modules.yml file.
+
+
+
+# NEW: Enable backpacks integrated within prison.
+backpacks: true
+
+
+# NEW: Broadcast rankups and demotions to the whole server, in all worlds.
+# If this value does not exist, or has a true value, it will be broadcasted.
+# Any other value besides true, or non-existant, will be treated as false.
+broadcast-rankups: false
+
+
+
+# NEW: Startup testing of available blocks within prison. Tests three kinds of
+# sources: Prison's BlockType, XMaterial's blocks (should mirror what's avaiable
+# within spigot/bukkit, and the raw spigot/bukkit source.
+# This should only be used to see what's available for the current version of 
+# spigot that is running on the server. This will not provide any 
+# extra blocks for any prison environment.
+prison-block-compatibility-report: false
+
+
+
+# Placeholder progress bar.  
+# Can control how many segments are generated.  The more segments that
+# are displayed the better reactive it will appear to the players.
+# Also what is used for the postive and negative parts of the status bar,
+# including color code and the text character to use. The color code will
+# only apply once, not for each segment.
+# You must quote the colors and segments or the yaml file can be fail to load.
+placeholder:
+  bar-segments: 20
+  bar-positive-color: "&2"
+  bar-positive-segment: "|"
+  bar-negative-color: "&4"
+  bar-negative-segment: "="
+  
+  # Custom Placeholders:
+  #  They MUST begin with 'prison__', which  has two underscores, or they will not work.
+  #  Custom placeholders can have an abbreviated format where it is the placeholder
+  #  with the quoted value, which can be multi-lined.
+  #  The extended format can have additonal settings.  The actual placeholder is 
+  #  paired with 'placeholder'.
+  #  If the custom placeholder contains non-prison placeholders, then you can set
+  #  the 'papi_expansion' to true.
+  #  If a description is provided, it will be shown within the placeholder listing.
+  #  Note that the use of hex colors will not work with bukkit versions prior to 
+  #  spigot 1.14.
+  custom-placeholders:
+    prison__chat_prefix: 
+      placeholder: "{prison_rank_tag_default}{prison_rank_tag_prestiges}"
+      papi_expansion: false
+      description: "Can use this in your chat prefix. May have to use %% instead of {}."
+    prison__player_stats: "{prison_rank_tag_default} -> {prison_rankup_rank_tag_default} 
+      {prison_rankup_cost_remaining_bar_default::bar:50:&a:|:&d:|} 
+      {prison_rankup_cost_remaining_formatted_default} needed to rankup"
+
+# Pre-spigot 1.14: Cannot do RGB colors:
+#    prison__branding: "&2P&3r&4o &5M&6i&an&be&cs"
+    prison__branding: "&#e81416P&#ffa500r&#faeb36o
+      &#79c314M&#487de7i&#4b369dn&#70369de&#ac7ad1s"
+      
+
+
+# Default language that is used as the primary language.
+# See the lang directories under /plugins/Prison/module_conf/ for the 
+# language files that can be edited.
+default-language: en_US
+
+
+
+# Prison defaults to a location code of en_US for the formatting of numbers 
+# which uses a "." for the decimal position, and "," for the thousands separator.
+# Prison overries the use of the server's and Java's location code, for the
+# exclusive purpose of formatting numbers, of which may not be
+# controllable by admins if they are using a hosted server. 
+# This allows separation between the default_language codes and the
+# number formatting language code.
+# The problem with using some other locations, such as en_UK, is that they
+# may use a Non-Blanking SPace (NBSP) for the thousands separator, of which
+# Minecraft cannot display that uni-code correctly and shows it as a 
+# squre with the letters NB on the first line, and SP on the second.
+# Examples of number formatting patterns and the results: 
+#       #,##0  and  #,##0.000 
+#       1,000  and  1,000.123
+# This controls number formatting of the symbols used throughout all of 
+# prison. This is the only way to control the symbols used. This does not
+# change the use of any of the number formatting patterns.
+number-format-location: en_US
+
+
+
+
+# The storage engine that Prison should use to store data.
+# The only valid storageType is file. 
+storageType: "file"
+
+
+# The following is experimental and should only be used if advised by a 
+# Prison support team member.
+# 
+storage:
+  file:
+    disable-advanced-saves:
+      enabled: false
+      debug-keep-temp-files: false
+
+
+# Prison mines reset gap is the number of milliseconds that are used to 
+# space out the mine resets when starting the server.  This value should 
+# not be changed unless you understand what you are doing. This value
+# is converted to ticks, so should use 50 millisecond increments. If too 
+# small of a value is used then it could produce a large amount of lag 
+# if more than one mine tries to reset at the same time, or close to each
+# other.  This may be changed to ticks in the near future.
+#prison-mines-reset-gap: 5000
+#
+# The tp-warmup will delay the player's attempt to teleport out of a mine,
+# where the delay is in ticks and if they move more than the max distance
+# in blocks, then the TP will be canceled.
+#
+# access-to-prior-mines defaults to true, and if enabled, players will
+# have access to mine in the mines that are tied to ranks that preceeded
+# their current rank.  Note, that mines must be tied to ranks to allow 
+# this to work.,
+#
+# tp-to-spawn-on-mine-resets: if enabled, players will be TP'd to the mine's
+# spawn location when the mine resets or if they suffocate in the mine.
+# If spawn is not set, then they will be tp'd to the top center of the mine.
+#
+# enable-suffocation-in-mines: defaults to false so players will not suffocate
+# if they get stuck in a block. Normally this is not an issue since they will
+# be TP'd out, but if that is disabled, then they risk suffocation.
+
+prison-mines:
+  reset-gap-ms: 5000
+  reset-paging:
+    max-page-elapsed-time-ms: 40
+    page-submit-delay-ticks: 0
+    page-timeout-check-block-count: 250
+  reset-async-paging:
+    async-page-size: 4000
+    sync-sub-page-slice: 200
+  tp-warmup:
+    enabled: false
+    movementMaxDistance: 1.0
+    delayInTicks: 20
+  forced-auto-rankups: false
+  access-to-prior-mines: true
+  tp-to-spawn-on-mine-resets: true
+  enable-suffocation-in-mines: false
+  mine-bombs:
+    prevent-usage-in-mines: 
+    - GoldMine
+    - SampleMineName
+
+  world-guard:
+    WARNING: WorldGuard may not be fully supported yet.
+
+    global-region-commands:
+      info:
+      - '/rg list {world}'
+      - '/rg info {world} __global__'
+      define:
+      - '/rg flag {world} __global__ passthrough deny'
+      deny-mob-spawning:
+      - 'rg flag {world} __global__ mob-spawning deny'
+      - '/gamerule doMobSpawning false'
+    mine-region-commands:
+      info:
+      - '/rg list {world}'
+      - '/rg info {world} {region-mine-name}'
+      redefine:
+      - '//pos1 {mine-pos1}'
+      - '//pos2 {mine-pos2}'
+      - '//region redefine {world} {region-mine-name}'
+      define:
+      - '/region define {world} {region-mine-name}'
+      - '/region addmember {world} {region-mine-name} {region-group-permission}'
+      - '/region setpriority {world} {region-mine-name} 20'
+      - '/region flag {world} {region-mine-name} block-break allow'
+      - '/region flag {world} {region-mine-name} item-pickup allow'
+      - '/region flag {world} {region-mine-name} exp-drops allow'
+      - '/region flag {world} {region-mine-name} item-drop allow'
+      select:
+      - '/region select {world} {region-mine-name}'
+
+    mine-area-region-commands:
+      info:
+      - '/rg list {world}'
+      - '/rg info {world} {region-mine-area-name}'
+      redefine:
+      - '//pos1 {mine-area-pos1}'
+      - '//pos2 {mine-area-pos2}'
+      - '/region redefine {world} {region-mine-area-name}'
+      define:
+      - '/region define {world} {region-mine-area-name}'
+      - '/region addmember {world} {region-mine-area-name} {region-group-permission}'
+      - '/region setpriority {world} {region-mine-area-name} 10'
+      - '/region flag {world} {region-mine-area-name} block-break deny'
+      - '/region flag {world} {region-mine-area-name} item-pickup allow'
+      - '/region flag {world} {region-mine-area-name} exp-drops allow'
+      - '/region flag {world} {region-mine-area-name} item-drop allow'
+      select:
+      - '/region select {world} {region-mine-area-name}'
+
+    region-mine:
+      enable: true
+      region-mine-name: 'prison_mine_{mine}'
+      region-group-permission: 'g:prison.mines.{mine}'
+    region-mine-area:
+      enable: false
+      region-mine-area-name: 'prison_mine_area_{mine}'
+      increase-x: 15
+      increase-z: 15
+      increase-y: 9999
+    
+
+
+
+
+# Warning: Do not use the following option. This could break the natural Bukkit 
+# loading behavior of Prison and other plugins.  It can have unexpected 
+# side effects. 
+# Use this feature ONLY when instructed by Prison support team and when 
+# other solutions have be tried first.
+#
+#   CMI Economy, through Vault, can have an issue of not initializing itself until 
+# all other plugins are done starting up, which means it's not active when prison 
+# tries to start.  Prison must enable it's integration with Vault before
+# it can enable Ranks, and everything that is depending upon ranks.  Failure to
+# have a funcional Economy when Ranks are enabled could lead to runtime errors
+# and even data corruption within your server, so ranks are disabled under those
+# conditons.
+#
+#   To get CMI's economy working with Prison, this option wil test to see if the Vault 
+# Economy is active, if it is, then it will allow Prison to start normally.  If not,
+# it will allow the prison's onEnable() function to return with a "success" to tell
+# Bukkit/Spigot that Prison was enabled successfully, but in reality, the 
+# enabling of Prison will be delayed for 5 seconds and then it will try again.
+# If it is, then Prison will be enabled.  If the Vault Economy is still not
+# active, then it will try again in 5 seconds.  It will attempt to start 6
+# times and if it fails to find an active Vault Economy then Prison will 
+# NOT start up at all.
+#
+#   It's an all or nothing situation when you enable this feature.
+#
+# It's been reported that the correct value to use for CMI is: Economy_CMI
+# Vault may report CMIEconomy but that is wrong.
+#
+# Warning: Other plugins that depend upon and use Prison may fail.  If they do fail 
+# because of a delayed start, then that is beyond the scope of support that can
+# be provided by Prison.  Delayed start is provided to get CMI working.  
+# We cannot be responsible for their choices.   
+#
+# Note: The process that this controls ONLY checks for the activation of Vault
+# Economy.  Therefore you must use CMI with Vault. Also this will "work" with 
+# any other economy plugins using vault too.  But please do not use this 
+# unless all other options have been exhusted. 
+#
+# NOTE: Due to the high degree of CMI Economies forcing the use of this delayed 
+# start, if delayed start is disabled and if Prison detects that CMI is enabled, 
+# Prison will now force a delayed start with the any vault economy being the
+# target.  This means as long as vault has an active economy, then prison will
+# start.  IF the vault economy is found right away, then no dealy startup will 
+# be submitted, and normal startup will continue right away.
+# 
+# To use the delayed startup:
+# 1. delayedPrisonStartup.enabled: true
+# 2. Optional: cooldown-secs and max-attemps identifies how frequently and how
+#    many times Prison will try to hook in to the vault economy.
+# 3. inspect-vault is optional. When enabled it will display what value must be
+#    used with the vault-economy-name.
+# 4. triggers.vault: true.  Must be true or this won't work. When true this
+#    ensures Vault has been registered and is also enabled.
+# 5. vault-economy-name: must match what's in vault.  If not, then prison will 
+#    fail to start.
+delayedPrisonStartup:
+  enabled: false
+  cooldown-secs: 5
+  max-attempts: 12
+  inspect-vault: true
+  triggers:
+    vault: true
+    vault-economy-name: Economy_CMI
+
+# CMI Economy:   vault-economy-name: Economy_CMI
+# EssentialsX: <= v2.18.x    vault-economy-name: Economy_Essentials
+# EssentialsX: >= v2.19.x    vault-economy-name: VaultEconomyProvider
+
+
+# The following changes the event priority for prison's listener for the 
+# given events. 
+# Currently, only AsyncPlayerChatEvent is able to be set. Default is LOW.
+prison-events:
+  AsyncPlayerChatEvent:
+    priority: LOW
+
+
+
+# The prisonCommandHander allows you to fine tune the Prison Command Handler
+# by adding aliases for any command, prevent non-op players from using specific
+# commands, viewing the command's' help, or list the blocked commands. 
+#
+# Commands must be listed in a hierarchy format. For example the command
+# `/mines tp` must be listed under the appropreiate sections as:
+#    mines:
+#      tp:
+#
+# For the exclude-non-ops there is a global setting that will apply the
+# restriction to specified command, plus their aliases.  If set to false,
+# then each alias would have to be listed for them to be excluded.
+#
+# For each exclude-non-ops entry, you can specify the includeCmdPerms and
+# the includeCmdAltPerms, both of which defaults to false.  You would have
+# to explicity enable them to prevent them from applying; use a value of true.
+#
+# For the includeCmdPerms, all perms included in the command are tested for
+# each player, and if there is a hit then the command is excluded for that player.
+# For the includeCmdAltPerms all are tested too, but no translations are
+# applied so most may not produce any hits.
+# The listed perms for each command are tested as is, with no translations.
+# If the given player has a hit on the perm, then they are excluded from 
+# being able to use the command.
+#
+# OPs, including console, are bypassed and cannot be excluded from any command.
+#
+prisonCommandHandler:
+  exclude-worlds:
+  - miniGameWorld
+  - playerPlotWorld
+  command-roots:
+    prison: prison
+    mines: mines
+    ranks: ranks
+    gui: gui
+    sellall: sellall
+  disable-player-placeholders-in-excluded-worlds: false
+  exclude-non-ops:
+    exclude-related-aliases: true
+    commands:
+      prison:
+        support:
+          colorTest:
+            includeCmdPerms: false
+            includeCmdAltPerms: false
+            perms:
+            - prison.exclude.test
+  aliases:
+    prison:
+      support: 
+        colorTest:
+        - pColorTest
+
+
+
+
+#
+# topN Player Settings:
+# 
+# The refresh settings are for an async task that will be running to 
+# provide updates to the topN player stats.  Only online players are 
+# updated. Offline players only have their stats calculated once, then
+# they are ignored for refresh processing.
+#
+# The delay-ticks setting is the delay that prison waits before starting
+# to run the topN refresh for the first time. By default, it's 3 minutes.
+#
+# The interval-ticks is the time between runs, with 5 minutes being the
+# default value.
+#'
+# topNPlayers.refesh.delay-ticks: 600 (30 seconds)
+# topNPlayers.refresh.interval-ticks: 6000 (5 minutes)
+#
+# Archive cutoff-days is the number of days that a player must be inactive
+# on prison before they are moved to the archival vaults.  Any player that
+# has been archived will not be included in the topN calculations. If 
+# a player is archived, then they return, they will become active and 
+# their old stats will apply
+#
+# topNPlayers.archive.cutoff-days: 90 (90 days)
+
+topNPlayers:
+  archive:
+    cutoff-days: 90
+  refresh:
+    delay-ticks: 600
+    interval-ticks: 6000
+
+
+# Hesitancy Delay Penalty - The purpose of the Hesitancy Delay Penalty is to encourage players
+# to rankup to the next rank.  Once a player exceeds the rankup cost, they start to incurr a 
+# rankup penalty.  The penalty would be based upon the amount over the rankup cost.  So if a player
+# has 1.1 million, then only 0.1 million will be subject to the penalty and the penalty will be 20%.
+# The max value a player can achieve for a rank will be the rankup cost, then the Hesitancy 
+# Delay Penalty will be subtracted from that amount. 
+# For example, if the rankup cost would be 1.0 million and a player has 1.1 million, then their 
+# max "score" they can achieve is 1.0 million, but the 20% penalty on the 0.1 million will be 
+# subtracted from the "score".  So their adjusted score would be:
+#   1.0 million - 0.1 million * 0.2 = 1.0 m - 20,000 = 0.8 m
+#
+top-stats:
+  rank-players:
+    hesitancy-delay-penalty: true
+
+
+
+
+
+# Player-Cache: The player cache stores and tracks a lot of detailed information for
+# all players. There are a few settings that can help improve performance, or help 
+# adjust for your server's requiremments.
+# write-delay-sec: Default 60 seconds - There is a player cache task that runs every 
+#                  x seconds, based upon this setting. It maintains the cache by 
+#                  saving 'dirty' entries, purging entries that have expired (off-line
+#                  player cache entries that have been loaded for longer than the 
+#                  time to live value). etc... This task provides the house keeping 
+#                  functions, with the most critical aspect being saving changed cached
+#                  entries.  This value need to be carefully balanced to help ensure the
+#                  entries are save frequently to protect against loss if the server 
+#                  crashes, but also it should be long enough so it does not consume
+#                  too many resources.
+#                  One minute may be a good starting point, but on stable servers, you 
+#                  could push it back to about 5 mins, 15 mins, or longer.
+#                  When the server shuts down normally, all dirty entries in the cache
+#                  are tried to be written before the server process is hard-terminated,
+#                  so consideration need to be applied to how many changes can be saved 
+#                  before the server gives up and hard-terminates the saves, which could
+#                  result in lost data.
+# time-to-live-sec: Default 30 mins.  For off line players, if there have been no 
+#                   interactions, or usage of their cache entries, they will be purged
+#                   from the cache.  This may also apply to online players too, but 
+#                   they would have to inactive for this duration.  If a player is 
+#                   purged from cache, then they will be reloaded when the rejoin the
+#                   server, or there is a need to update, or access their cache entry.
+# update-player-stats-sec: Default 30 seconds.  Checks to see if all players within the
+#                          player cache who are marked as active are still online.
+#                          This does not update any files and does not interact with 
+#                          bukkit/spigot. Very, very minimal impact on server, but
+#                          important to recording player's activity level on the server.
+player-cache:
+  write-delay-sec: 60
+  time-to-live-sec: 1800
+  update-player-stats-sec: 30
+  
+  
+  

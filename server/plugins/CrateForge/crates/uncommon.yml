@@ -1,0 +1,63 @@
+id: uncommon
+display-name: "<gradient:green:yellow>Uncommon Crate</gradient>"
+key-id: uncommon_key
+animation: CSGO
+hologram-lines:
+  - "<green><bold>UNCOMMON CRATE"
+  - "<yellow>Right-click to open"
+
+ambient:
+  enabled: true
+  item: key
+  particle: DUST
+  color: "#70D68B"
+
+prizes:
+  - id: enchanted_iron_sword
+    display-name: "<green>Enchanted Iron Sword"
+    material: IRON_SWORD
+    amount: 1
+    weight: 35
+    rarity: UNCOMMON
+    enchantments:
+      SHARPNESS: 3
+      UNBREAKING: 2
+    rewards:
+      - type: ITEM
+
+  - id: money_250
+    display-name: "<green>$250"
+    material: SUNFLOWER
+    amount: 1
+    weight: 25
+    rarity: UNCOMMON
+    rewards:
+      - type: MONEY
+        amount: 250.0
+
+  - id: uncommon_keys_2
+    display-name: "<green>2 Uncommon Keys"
+    material: TRIPWIRE_HOOK
+    amount: 1
+    weight: 8
+    rarity: RARE
+    rewards:
+      - type: COMMAND
+        command: "cf givekey {player} uncommon_key 2"
+        run-as-console: true
+
+  - id: rare_key
+    display-name: "<blue>Rare Key"
+    material: TRIPWIRE_HOOK
+    amount: 1
+    weight: 2
+    rarity: EPIC
+    rewards:
+      - type: COMMAND
+        command: "cf givekey {player} rare_key 1"
+        run-as-console: true
+
+pity:
+  enabled: true
+  threshold: 30
+  guaranteed-min-rarity: RARE

@@ -1,0 +1,161 @@
+Options:
+  Ranks:
+    GUI_Enabled: true
+    Permission_GUI_Enabled: false
+    Permission_GUI: prison.gui.ranks
+    Item_gotten_rank: TRIPWIRE_HOOK
+    Enchantment_effect_current_rank: true
+    Ladder: default
+    Number_of_Rank_Player_GUI: false
+    MaterialType:
+      HasRankAccess: TRIPWIRE_HOOK
+      NoRankAccess: REDSTONE_BLOCK
+    GuiItemNameDefault: '{rankTag}'
+    GuiItemNames:
+      J: '&7[&bJ&7]'
+      P22: '&5[&d+22&5]'
+      P5: '&5[&d+5&5]'
+      F: '&7[&7F&7]'
+      P: '&7[&2P&7]'
+      E: '&7[&6E&7]'
+      P3: '&5[&d+3&5]'
+      A: '&7[&2A&7]'
+      P8: '&5[&d+8&5]'
+      I: '&7[&aI&7]'
+  Mines:
+    GUI_Enabled: true
+    Permission_GUI_Enabled: false
+    Permission_GUI: prison.gui.mines
+    PermissionWarpPlugin: mines.tp.
+    CommandWarpPlugin: mines tp
+    MaterialType:
+      HasMineAccess: COAL_ORE
+      NoMineAccess: REDSTONE_BLOCK
+    GuiItemNameDefault: '{mineTag}'
+    GuiItemNames:
+      L: '&7[&dL&7]'
+      X: '&7[&aX&7]'
+      M: '&7[&eM&7]'
+      O: '&7[&1O&7]'
+      V: '&7[&8V&7]'
+      S: '&7[&5S&7]'
+      Z: '&7[&cZ&7]'
+      G: '&7[&8G&7]'
+      K: '&7[&cK&7]'
+      J: '&7[&bJ&7]'
+  Prestiges:
+    GUI_Enabled: true
+    Permission_GUI_Enabled: false
+    Permission_GUI: prison.gui.prestiges
+  Setup:
+    EnabledGUI: true
+  Titles:
+    PlayerRanksGUI: '&3Player -> Ranks'
+    PlayerPrestigesGUI: '&3Player -> Prestiges'
+    PlayerMinesGUI: '&3Player -> Mines'
+EditableLore:
+  Ranks:
+  - ' '
+  - '&8-----------------------'
+  - '&3Ladder: &a{ladderName}'
+  - '&3Mines:  &a{linkedMines}'
+  - ' '
+  - '&3Rank Price: &a${rankPrice}'
+  - ' '
+  - '&7Players:    &3%prison_rank__player_count_{rankName}%'
+  - '&8-----------------------'
+  - '&7Total Cost: &3%prison_rank__player_cost_formatted_{rankName}%'
+  - '&7Multiplier: &3{rankMultiplier}'
+  - '&7Balance:    &3%prison_player_balance_default%'
+  - '&7Remaining:  &3%prison_rank__player_cost_remaining_formatted_{rankName}%'
+  - '%prison_rank__player_cost_bar_{rankName}%'
+  - '&8-----------------------'
+  README-Updated-2022-12-22:
+  - ' '
+  - '&8-----------------------'
+  - '&7 WARNING!! DO NOT EDIT THESE!!'
+  - '&7  - THESE ARE JUST INFORMATIONAL NOTES AND WILL BE IGNORED BY PRISON.'
+  - ' '
+  - '&7 PLEASE READ - IMPORTANT CHANGESE!!'
+  - '&7  - You can safely remove other ''EditableLore.README*'' notes since they '
+  - '&7      are now obsolete.'
+  - '&7  - Remove everything under ''EditableLore.Mines'' and then reload the GUI: '
+  - '&7      /prison reload gui '
+  - '&7    The Mines LORE layout has been updated and this will help apply the '
+  - '&7      new update to your configs'
+  - '&8-----------------------'
+  - '&7 There are three types of placeholders that will work with EditableLore:'
+  - '&7 1. GUI placeholders'
+  - '&7 2. ''/prison placeholders list'''
+  - '&7 3. Any other placeholder through PlaceholderAPI'
+  - '&8-----------------------'
+  - '&7GUI Placeholders are only the following and they are evaluated first '
+  - '&7so they can be nested in the prison placeholders: '
+  - '&7  '
+  - '&7 For Ranks ONLY: '
+  - '&7   {rankName} {rankTag} {rankPrice} {rankMultiplier}'
+  - '&7   {ladderName} {linkedMines}'
+  - '&7   {linkedMines}'
+  - '&7  '
+  - '&7 For Mines ONLY: '
+  - '&7   {mineName} {mineTag} {mineSize} {mineVolume} '
+  - '&7   {mineRemaining} {mineRemaingPercent} '
+  - '&7   {clickToTeleport} {lockStatus} {playerCount} {linkedRank} '
+  - '&8-----------------------'
+  - '&7Prison placeholders can include any that are within these placeholder '
+  - '&7Groups: PLAYER, RANKS, RANKPLAYERS, MINES, STATSMINES, and STATSRANKS'
+  - '&8-----------------------'
+  - '&7To use dyanamic placeholders, you need to use a combination of these two'
+  - '&7types of placeholders. You use the GUI placeholders to inject the rank'
+  - '&7name, or mine name, in to the prison placeholders. When injecting the '
+  - '&7names, do not use the tags since those will also inject formatting codes'
+  - '&7which will corrupt the placeholders.'
+  - '&7Cost:      &3%prison_rank__player_cost_formatted_{rankName}%'
+  - '&7Remaining: &3%prison_rank__player_cost_remaining_formatted_{rankName}%'
+  - '%prison_rank__player_cost_bar_{rankName}%'
+  - '&8-----------------------'
+  Rank:
+    default:
+      A:
+      - ' '
+      - '&8-----------------------'
+      - '&3The start of an amazing adventure.'
+      - '&8-----------------------'
+      Z:
+      - ' '
+      - '&8-----------------------'
+      - '&3The end of the most amazing adventure.'
+      - '&3But... if you do ''/prestige'' you can start'
+      - '&3start over and have even more fun!'
+      - '&8-----------------------'
+    prestiges:
+      p1:
+      - ' '
+      - '&8-----------------------'
+      - '&3This is a very prestigious rank!'
+      - '&8-----------------------'
+  Mines:
+  - ' '
+  - '&8-----------------------'
+  - '&3Mine:   &a{mineName} &r{mineTag}'
+  - '&3Rank:   &a{linkedRank}'
+  - ' '
+  - '&3Size:   &a{mineSize}'
+  - '&3Volume: &a{mineVolume}'
+  - '&3Blocks Remaining: &a{mineRemaining} &a{mineRemainingPercent}%'
+  - '&3Players in Mine: &a{playerCount}'
+  - ' '
+  - '  {clickToTeleport}'
+  - '  {lockStatus}'
+  - '&8-----------------------'
+  Mine:
+    A:
+    - ' '
+    - '&8-----------------------'
+    - '&3Where new players start their awesome adventure!'
+    - '&8-----------------------'
+    Z:
+    - ' '
+    - '&8-----------------------'
+    - '&3Time to get ready to prestige, and restart the fun adventure!'
+    - '&8-----------------------'

@@ -1,0 +1,32 @@
+{
+  "mineSweeperEnabled": false,
+  "notificationMode": "radius",
+  "accessPermission": "",
+  "skipResetBypassLimit": 50,
+  "zeroBlockResetDelaySec": 0.0,
+  "skipResetEnabled": false,
+  "resetThresholdPercent": 0.0,
+  "mineLinerData": "walls:bedrock:forced,bottom:bedrock:forced,ladderType:normal",
+  "tpAccessByRank": false,
+  "world": "Virtually-Undefined",
+  "prisonBlocks": [
+    "obsidian-5.0-0-0-0-0-0-false",
+    "redstone_block-10.0-0-0-0-0-0-false",
+    "lapis_block-20.0-0-0-0-0-0-false",
+    "dark_prismarine-20.0-0-0-0-0-0-false",
+    "prismarine-20.0-0-0-0-0-0-false",
+    "gold_block-25.0-0-0-0-0-0-false"
+  ],
+  "mineBlockEvents": [],
+  "mineAccessByRank": false,
+  "sortOrder": 0,
+  "mineType": "primary",
+  "name": "X",
+  "rank": "RANK,X,-1,&7[&aX&7]",
+  "skipResetPercent": 80.0,
+  "isVirtual": true,
+  "tag": "&7[&aX&7]",
+  "resetTime": 900,
+  "notificationRadius": 150,
+  "commands": []
+}

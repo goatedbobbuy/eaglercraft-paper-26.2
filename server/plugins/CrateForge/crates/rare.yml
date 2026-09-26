@@ -1,0 +1,65 @@
+id: rare
+display-name: "<gradient:aqua:blue>Rare Crate</gradient>"
+key-id: rare_key
+animation: CSGO
+hologram-lines:
+  - "<aqua><bold>RARE CRATE"
+  - "<yellow>Right-click to open"
+
+# Living-crate ambience. Anything omitted here is inherited from config.yml.
+ambient:
+  enabled: true
+  item: key            # `key` = this crate's key item · a material name · `none`
+  particle: DUST
+  color: "#4FB6E8"
+
+prizes:
+  - id: diamond_sword
+    display-name: "<aqua>Enchanted Diamond Sword"
+    material: DIAMOND_SWORD
+    amount: 1
+    weight: 35
+    rarity: RARE
+    enchantments:
+      SHARPNESS: 4
+      UNBREAKING: 3
+      LOOTING: 2
+    rewards:
+      - type: ITEM
+
+  - id: money_750
+    display-name: "<green>$750"
+    material: SUNFLOWER
+    amount: 1
+    weight: 20
+    rarity: RARE
+    rewards:
+      - type: MONEY
+        amount: 750.0
+
+  - id: rare_keys_2
+    display-name: "<blue>2 Rare Keys"
+    material: TRIPWIRE_HOOK
+    amount: 1
+    weight: 8
+    rarity: EPIC
+    rewards:
+      - type: COMMAND
+        command: "cf givekey {player} rare_key 2"
+        run-as-console: true
+
+  - id: mythic_key
+    display-name: "<light_purple>Mythic Key"
+    material: TRIPWIRE_HOOK
+    amount: 1
+    weight: 2
+    rarity: LEGENDARY
+    rewards:
+      - type: COMMAND
+        command: "cf givekey {player} mythic_key 1"
+        run-as-console: true
+
+pity:
+  enabled: true
+  threshold: 25
+  guaranteed-min-rarity: EPIC

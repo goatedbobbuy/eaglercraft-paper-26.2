@@ -1,0 +1,15 @@
+id: mythic_key
+display-name: "<light_purple><bold>Mythic Key</bold></light_purple>"
+material: TRIPWIRE_HOOK
+lore:
+  - "<gray>Use this key to open the"
+  - "<light_purple>Mythic Crate</light_purple>"
+glow: true
+
+obtain-methods:
+  - type: VOTE
+  - type: COMMAND
+  - type: SHOP
+    shop-price: 4000
+    shop-currency: TOKENS
+    token-type: premium
