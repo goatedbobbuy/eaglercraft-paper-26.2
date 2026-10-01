@@ -72,7 +72,7 @@ velocity-ping-save: true
 # It will fall back to the default option if none found.
 velocity-servers:
   default: 4
-  auth: -1
+  auth: 775
   survival: 776
 #
 #----------------------------------------------------------#

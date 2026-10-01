@@ -89,7 +89,7 @@ title:
 #  - BUNGEE_GUARD
 # Don't use secret if you do not use MODERN type
 infoForwarding:
-  type: NONE
+  type: LEGACY
   secret: '<YOUR_SECRET_HERE>'
   tokens:
     - '<BUNGEE_GUARD_TOKEN>'
